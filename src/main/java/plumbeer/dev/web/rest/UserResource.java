@@ -2,8 +2,10 @@ package plumbeer.dev.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import plumbeer.dev.domain.Authority;
+import plumbeer.dev.domain.Ciudad;
 import plumbeer.dev.domain.User;
 import plumbeer.dev.repository.AuthorityRepository;
+import plumbeer.dev.repository.CiudadRepository;
 import plumbeer.dev.repository.UserRepository;
 import plumbeer.dev.security.AuthoritiesConstants;
 import plumbeer.dev.service.MailService;
@@ -74,6 +76,8 @@ public class UserResource {
     @Inject
     private UserService userService;
 
+    @Inject
+    private CiudadRepository ciudadRepository;
     /**
      * POST  /users -> Creates a new user.
      * <p>
@@ -161,10 +165,21 @@ public class UserResource {
         method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    @Transactional(readOnly = true)
+    @Transactional(readOnly = false)
     public ResponseEntity<List<ManagedUserDTO>> getAllUsers(Pageable pageable)
         throws URISyntaxException {
         Page<User> page = userRepository.findAll(pageable);
+
+        /*Ciudad ciudad = ciudadRepository.findOne(1L);
+
+        User user1 = page.getContent().get(0);
+
+        user1.setCiudad(ciudad);
+
+
+
+        userRepository.save(user1);*/
+
         List<ManagedUserDTO> managedUserDTOs = page.getContent().stream()
             .map(user -> new ManagedUserDTO(user))
             .collect(Collectors.toList());

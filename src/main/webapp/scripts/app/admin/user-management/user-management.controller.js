@@ -1,13 +1,15 @@
 'use strict';
 
 angular.module('plumbeerApp')
-    .controller('UserManagementController', function ($scope, Principal, User, ParseLinks, Language) {
+    .controller('UserManagementController', function ($scope, Principal, User, ParseLinks, Language, Ciudad) {
         $scope.users = [];
         $scope.authorities = ["ROLE_USER", "ROLE_ADMIN"];
         Language.getAll().then(function (languages) {
             $scope.languages = languages;
         });
-		
+        Ciudad.getAll().then(function(ciudads){
+            $scope.ciudads = ciudads;
+        });
 		Principal.identity().then(function(account) {
             $scope.currentAccount = account;
         });
@@ -36,7 +38,7 @@ angular.module('plumbeerApp')
 
         $scope.clear = function () {
             $scope.user = {
-                id: null, login: null, firstName: null, lastName: null, email: null,
+                id: null, login: null, firstName: null, lastName: null, email: null, ciudad: null,
                 activated: null, langKey: null, createdBy: null, createdDate: null,
                 lastModifiedBy: null, lastModifiedDate: null, resetDate: null,
                 resetKey: null, authorities: null

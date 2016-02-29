@@ -77,6 +77,12 @@
             </div>
         </div>
         <div class="form-group">
+            <label>Ciudad</label>
+            <select class="form-control" name="ciudad_id" ng-model="user.ciudad_id"
+                    ng-options="ciudad as ciudad for ciudad in ciudads track by ciudad">
+            </select>
+        </div>
+        <div class="form-group">
             <label for="activated">
                 <input ng-disabled="user.id === null" type="checkbox" id="activated" ng-model="user.activated">
                 <span translate="user-management.activated">Activated</span>

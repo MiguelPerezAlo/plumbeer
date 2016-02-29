@@ -2,6 +2,7 @@ package plumbeer.dev.web.rest.dto;
 
 import java.time.ZonedDateTime;
 
+import plumbeer.dev.domain.Ciudad;
 import plumbeer.dev.domain.User;
 
 /**
@@ -16,6 +17,8 @@ public class ManagedUserDTO extends UserDTO {
     private String lastModifiedBy;
 
     private ZonedDateTime lastModifiedDate;
+
+    //private Ciudad ciudad;
 
     public ManagedUserDTO() {
     }
