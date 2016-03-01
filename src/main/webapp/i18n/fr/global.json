@@ -8,6 +8,8 @@
             "entities": {
                 "main": "Entités",
                 "ciudad": "Ciudad",
+                "categoria": "Categoria",
+                "producto": "Producto",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

@@ -1,0 +1,89 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myProductoLabel" translate="plumbeerApp.producto.home.createOrEditLabel">Create or edit a Producto</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="producto.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="plumbeerApp.producto.nombre" for="field_nombre">Nombre</label>
+            <input type="text" class="form-control" name="nombre" id="field_nombre"
+                    ng-model="producto.nombre"
+                    required ng-minlength="1" />
+            <div ng-show="editForm.nombre.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.nombre.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.nombre.$error.minlength" translate="entity.validation.minlength" translate-value-min="1">
+                    This field is required to be at least 1 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="plumbeerApp.producto.precio" for="field_precio">Precio</label>
+            <input type="number" class="form-control" name="precio" id="field_precio"
+                    ng-model="producto.precio"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="plumbeerApp.producto.descripcion" for="field_descripcion">Descripcion</label>
+            <input type="text" class="form-control" name="descripcion" id="field_descripcion"
+                    ng-model="producto.descripcion"
+                     />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="setFoto($file, producto)" ngf-pattern="'image/*'">
+            <label class="control-label" translate="plumbeerApp.producto.foto" for="field_foto">Foto</label>
+            <div>
+                <img data-ng-src="{{'data:' + producto.fotoContentType + ';base64,' + producto.foto}}" style="max-height: 100px;" ng-if="producto.foto"/>
+                <div class="help-block clearfix">
+                    <span class="pull-left">{{producto.fotoContentType}} {{byteSize(producto.foto)}}</span>
+                    <button ng-click="producto.foto=null;producto.fotoContentType=null;"
+                            ng-if="producto.foto"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="file" ngf-select class="btn btn-default btn-block"
+                        ngf-change="setFoto($file, producto)" accept="image/*" translate="entity.action.addimage">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="foto" id="field_foto"
+                    ng-model="producto.foto"
+                     />
+            <input type="hidden" class="form-control" name="fotoContentType" id="field_fotoContentType"
+                    ng-model="producto.fotoContentType" />
+        </div>
+
+        <div class="form-group">
+            <label translate="plumbeerApp.producto.categoria" for="field_categoria">categoria</label>
+            <select class="form-control" id="field_categoria" name="categoria" ng-model="producto.categoria" ng-options="categoria as categoria.nombre for categoria in categorias track by categoria.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="plumbeerApp.producto.user" for="field_user">user</label>
+            <select class="form-control" id="field_user" name="user" ng-model="producto.user" ng-options="user as user.login for user in users track by user.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

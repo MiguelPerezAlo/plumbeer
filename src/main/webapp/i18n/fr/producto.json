@@ -1,0 +1,28 @@
+{
+    "plumbeerApp": {
+        "producto" : {
+            "home": {
+                "title": "Productos",
+                "createLabel": "Créer un nouveau Producto",
+                "createOrEditLabel": "Créer ou éditer un Producto",
+                "search": "Search for Producto"
+            },
+            "created": "Un nouveau Producto a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Producto avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Producto avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Producto {{ id }} ?"
+            },
+            "detail": {
+                "title": "Producto"
+            },
+            "nombre": "Nombre",
+            "precio": "Precio",
+            "descripcion": "Descripcion",
+            "foto": "Foto",
+            "categoria": "Categoria",
+            "user": "User"
+        }
+    }
+}
+
