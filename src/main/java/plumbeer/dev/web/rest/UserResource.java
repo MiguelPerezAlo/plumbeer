@@ -170,15 +170,10 @@ public class UserResource {
         throws URISyntaxException {
         Page<User> page = userRepository.findAll(pageable);
 
-        /*Ciudad ciudad = ciudadRepository.findOne(1L);
-
+        Ciudad ciudad = ciudadRepository.findOne(1L);
         User user1 = page.getContent().get(0);
-
         user1.setCiudad(ciudad);
-
-
-
-        userRepository.save(user1);*/
+        userRepository.save(user1);
 
         List<ManagedUserDTO> managedUserDTOs = page.getContent().stream()
             .map(user -> new ManagedUserDTO(user))

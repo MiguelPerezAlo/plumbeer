@@ -1,14 +1,15 @@
 'use strict';
 
 angular.module('plumbeerApp').controller('UserManagementDialogController',
-    ['$scope', '$stateParams', '$uibModalInstance', 'entity', 'User', 'Language',
-        function($scope, $stateParams, $uibModalInstance, entity, User, Language) {
+    ['$scope', '$stateParams', '$uibModalInstance', 'entity', 'User', 'Language', 'Ciudad',
+        function($scope, $stateParams, $uibModalInstance, entity, User, Language, Ciudad) {
 
         $scope.user = entity;
         $scope.authorities = ["ROLE_USER", "ROLE_ADMIN"];
         Language.getAll().then(function (languages) {
             $scope.languages = languages;
         });
+        $scope.ciudads = Ciudad.query();
         var onSaveSuccess = function (result) {
             $scope.isSaving = false;
             $uibModalInstance.close(result);

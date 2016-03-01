@@ -2,8 +2,10 @@ package plumbeer.dev.web.rest;
 
 import plumbeer.dev.Application;
 import plumbeer.dev.domain.Authority;
+import plumbeer.dev.domain.Ciudad;
 import plumbeer.dev.domain.User;
 import plumbeer.dev.repository.AuthorityRepository;
+import plumbeer.dev.repository.CiudadRepository;
 import plumbeer.dev.repository.UserRepository;
 import plumbeer.dev.security.AuthoritiesConstants;
 import plumbeer.dev.service.MailService;
@@ -55,6 +57,9 @@ public class AccountResourceIntTest {
 
     @Inject
     private UserService userService;
+
+    @Inject
+    private CiudadRepository ciudadRepository;
 
     @Mock
     private UserService mockUserService;
@@ -140,6 +145,8 @@ public class AccountResourceIntTest {
                 .andExpect(status().isInternalServerError());
     }
 
+    Ciudad ciudad = ciudadRepository.findOne(1L);
+
     @Test
     @Transactional
     public void testRegisterValid() throws Exception {
@@ -151,6 +158,7 @@ public class AccountResourceIntTest {
             "joe@example.com",      // e-mail
             true,                   // activated
             "en",                   // langKey
+            ciudad,                // Ciudad
             new HashSet<>(Arrays.asList(AuthoritiesConstants.USER))
         );
 
@@ -175,6 +183,7 @@ public class AccountResourceIntTest {
             "funky@example.com",    // e-mail
             true,                   // activated
             "en",                   // langKey
+            ciudad,                 // Ciudad
             new HashSet<>(Arrays.asList(AuthoritiesConstants.USER))
         );
 
@@ -199,6 +208,7 @@ public class AccountResourceIntTest {
             "invalid",          // e-mail <-- invalid
             true,               // activated
             "en",               // langKey
+            ciudad,             // Ciudad
             new HashSet<>(Arrays.asList(AuthoritiesConstants.USER))
         );
 
@@ -224,12 +234,13 @@ public class AccountResourceIntTest {
             "alice@example.com",    // e-mail
             true,                   // activated
             "en",                   // langKey
+            ciudad,                 // ciudad
             new HashSet<>(Arrays.asList(AuthoritiesConstants.USER))
         );
 
         // Duplicate login, different e-mail
         UserDTO dup = new UserDTO(u.getLogin(), u.getPassword(), u.getLogin(), u.getLastName(),
-            "alicejr@example.com", true, u.getLangKey(), u.getAuthorities());
+            "alicejr@example.com", true, u.getLangKey(), u.getCiudad(), u.getAuthorities());
 
         // Good user
         restMvc.perform(
@@ -261,12 +272,13 @@ public class AccountResourceIntTest {
             "john@example.com",     // e-mail
             true,                   // activated
             "en",                   // langKey
+            ciudad,                 // Ciudad
             new HashSet<>(Arrays.asList(AuthoritiesConstants.USER))
         );
 
         // Duplicate e-mail, different login
         UserDTO dup = new UserDTO("johnjr", u.getPassword(), u.getLogin(), u.getLastName(),
-            u.getEmail(), true, u.getLangKey(), u.getAuthorities());
+            u.getEmail(), true, u.getLangKey(), u.getCiudad(), u.getAuthorities());
 
         // Good user
         restMvc.perform(
@@ -297,6 +309,7 @@ public class AccountResourceIntTest {
             "badguy@example.com",   // e-mail
             true,                   // activated
             "en",                   // langKey
+            ciudad,                 // Ciudad
             new HashSet<>(Arrays.asList(AuthoritiesConstants.ADMIN)) // <-- only admin should be able to do that
         );
 

@@ -18,7 +18,7 @@ public class ManagedUserDTO extends UserDTO {
 
     private ZonedDateTime lastModifiedDate;
 
-    //private Ciudad ciudad;
+    private Ciudad ciudad;
 
     public ManagedUserDTO() {
     }
@@ -29,6 +29,7 @@ public class ManagedUserDTO extends UserDTO {
         this.createdDate = user.getCreatedDate();
         this.lastModifiedBy = user.getLastModifiedBy();
         this.lastModifiedDate = user.getLastModifiedDate();
+        this.ciudad = user.getCiudad();
     }
 
     public Long getId() {
@@ -64,12 +65,22 @@ public class ManagedUserDTO extends UserDTO {
     }
 
     @Override
+    public Ciudad getCiudad() {
+        return ciudad;
+    }
+
+    public void setCiudad(Ciudad ciudad) {
+        this.ciudad = ciudad;
+    }
+
+    @Override
     public String toString() {
         return "ManagedUserDTO{" +
             "id=" + id +
             ", createdDate=" + createdDate +
             ", lastModifiedBy='" + lastModifiedBy + '\'' +
             ", lastModifiedDate=" + lastModifiedDate +
-            "} " + super.toString();
+            ", ciudad=" + ciudad +
+            '}';
     }
 }

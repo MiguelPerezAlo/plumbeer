@@ -1,6 +1,7 @@
 package plumbeer.dev.web.rest.dto;
 
 import plumbeer.dev.domain.Authority;
+import plumbeer.dev.domain.Ciudad;
 import plumbeer.dev.domain.User;
 
 import org.hibernate.validator.constraints.Email;
@@ -40,6 +41,8 @@ public class UserDTO {
     @Size(min = 2, max = 5)
     private String langKey;
 
+    private Ciudad ciudad;
+
     private Set<String> authorities;
 
     public UserDTO() {
@@ -47,13 +50,13 @@ public class UserDTO {
 
     public UserDTO(User user) {
         this(user.getLogin(), null, user.getFirstName(), user.getLastName(),
-            user.getEmail(), user.getActivated(), user.getLangKey(),
+            user.getEmail(), user.getActivated(), user.getLangKey(), user.getCiudad(),
             user.getAuthorities().stream().map(Authority::getName)
                 .collect(Collectors.toSet()));
     }
 
     public UserDTO(String login, String password, String firstName, String lastName,
-        String email, boolean activated, String langKey, Set<String> authorities) {
+        String email, boolean activated, String langKey, Ciudad ciudad, Set<String> authorities) {
 
         this.login = login;
         this.password = password;
@@ -62,6 +65,7 @@ public class UserDTO {
         this.email = email;
         this.activated = activated;
         this.langKey = langKey;
+        this.ciudad = ciudad;
         this.authorities = authorities;
     }
 
@@ -93,6 +97,8 @@ public class UserDTO {
         return langKey;
     }
 
+    public Ciudad getCiudad() { return ciudad; }
+
     public Set<String> getAuthorities() {
         return authorities;
     }
@@ -107,7 +113,8 @@ public class UserDTO {
             ", email='" + email + '\'' +
             ", activated=" + activated +
             ", langKey='" + langKey + '\'' +
+            ", ciudad=" + ciudad +
             ", authorities=" + authorities +
-            "}";
+            '}';
     }
 }
