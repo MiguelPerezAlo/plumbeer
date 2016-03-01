@@ -57,7 +57,7 @@ angular.module('plumbeerApp')
                         resolve: {
                             entity: function () {
                                 return {
-                                    id: null, login: null, firstName: null, lastName: null, email: null, ciudad:null,
+                                    id: null, login: null, firstName: null, lastName: null, email: null, ciudad_id:null,
                                     activated: true, langKey: null, createdBy: null, createdDate: null,
                                     lastModifiedBy: null, lastModifiedDate: null, resetDate: null,
                                     resetKey: null, authorities: null
