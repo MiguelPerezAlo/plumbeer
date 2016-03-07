@@ -1,0 +1,48 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "titulo"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "opinion",
+            "otherEntityName": "opinion",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "anuncio"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "titulo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength"
+            ],
+            "fieldValidateRulesMinlength": "1"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "contenido",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "publicacion",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20160307182148",
+    "dto": "no",
+    "service": "no",
+    "pagination": "no"
+}

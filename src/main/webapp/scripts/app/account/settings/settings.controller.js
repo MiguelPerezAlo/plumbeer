@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('plumbeerApp')
-    .controller('SettingsController', function ($scope, Principal, Auth, Language, $translate) {
+    .controller('SettingsController', function ($scope, Principal, Auth, Ciudad, Language, $translate) {
         $scope.success = null;
         $scope.error = null;
         Principal.identity().then(function(account) {
@@ -33,6 +33,7 @@ angular.module('plumbeerApp')
             return {
                 activated: account.activated,
                 email: account.email,
+                ciudad: account.ciudad,
                 firstName: account.firstName,
                 langKey: account.langKey,
                 lastName: account.lastName,

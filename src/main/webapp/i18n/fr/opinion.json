@@ -1,0 +1,27 @@
+{
+    "plumbeerApp": {
+        "opinion" : {
+            "home": {
+                "title": "Opinions",
+                "createLabel": "Créer un nouveau Opinion",
+                "createOrEditLabel": "Créer ou éditer un Opinion",
+                "search": "Search for Opinion"
+            },
+            "created": "Un nouveau Opinion a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Opinion avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Opinion avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Opinion {{ id }} ?"
+            },
+            "detail": {
+                "title": "Opinion"
+            },
+            "titulo": "Titulo",
+            "comentario": "Comentario",
+            "fecha": "Fecha",
+            "user": "User",
+            "anuncio": "Anuncio"
+        }
+    }
+}
+

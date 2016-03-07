@@ -142,6 +142,7 @@ public class UserResource {
                 user.setFirstName(managedUserDTO.getFirstName());
                 user.setLastName(managedUserDTO.getLastName());
                 user.setEmail(managedUserDTO.getEmail());
+                user.setCiudad(managedUserDTO.getCiudad());
                 user.setActivated(managedUserDTO.isActivated());
                 user.setLangKey(managedUserDTO.getLangKey());
                 Set<Authority> authorities = user.getAuthorities();
@@ -169,12 +170,6 @@ public class UserResource {
     public ResponseEntity<List<ManagedUserDTO>> getAllUsers(Pageable pageable)
         throws URISyntaxException {
         Page<User> page = userRepository.findAll(pageable);
-
-        Ciudad ciudad = ciudadRepository.findOne(1L);
-        User user1 = page.getContent().get(0);
-        user1.setCiudad(ciudad);
-        userRepository.save(user1);
-
         List<ManagedUserDTO> managedUserDTOs = page.getContent().stream()
             .map(user -> new ManagedUserDTO(user))
             .collect(Collectors.toList());

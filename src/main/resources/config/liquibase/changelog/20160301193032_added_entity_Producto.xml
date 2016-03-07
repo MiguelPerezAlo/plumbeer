@@ -27,7 +27,7 @@
             
             <column name="precio" type="double"/>
             
-            <column name="descripcion" type="varchar(255)"/>
+            <column name="descripcion" type="clob"/>
             
             <column name="foto" type="blob" />
             <column name="foto_content_type" type="varchar(50)">

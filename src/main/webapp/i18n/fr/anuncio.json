@@ -1,0 +1,27 @@
+{
+    "plumbeerApp": {
+        "anuncio" : {
+            "home": {
+                "title": "Anuncios",
+                "createLabel": "Créer un nouveau Anuncio",
+                "createOrEditLabel": "Créer ou éditer un Anuncio",
+                "search": "Search for Anuncio"
+            },
+            "created": "Un nouveau Anuncio a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Anuncio avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Anuncio avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Anuncio {{ id }} ?"
+            },
+            "detail": {
+                "title": "Anuncio"
+            },
+            "titulo": "Titulo",
+            "contenido": "Contenido",
+            "publicacion": "Publicacion",
+            "user": "User",
+            "opinion": "Opinion"
+        }
+    }
+}
+

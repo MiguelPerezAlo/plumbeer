@@ -1,0 +1,46 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "titulo"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "anuncio",
+            "otherEntityName": "anuncio",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "titulo"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "titulo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "comentario",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "fecha",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20160307182414",
+    "dto": "no",
+    "service": "no",
+    "pagination": "no"
+}

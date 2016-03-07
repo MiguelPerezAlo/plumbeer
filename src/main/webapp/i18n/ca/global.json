@@ -9,6 +9,8 @@
                 "main": "Entitats",
                 "categoria": "Categoria",
                 "producto": "Producto",
+                "anuncio": "Anuncio",
+                "opinion": "Opinion",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

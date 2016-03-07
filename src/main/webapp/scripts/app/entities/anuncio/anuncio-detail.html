@@ -1,0 +1,54 @@
+
+<div>
+    <h2><span translate="plumbeerApp.anuncio.detail.title">Anuncio</span> {{anuncio.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="plumbeerApp.anuncio.titulo">Titulo</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{anuncio.titulo}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="plumbeerApp.anuncio.contenido">Contenido</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{anuncio.contenido}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="plumbeerApp.anuncio.publicacion">Publicacion</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{anuncio.publicacion | date:'medium'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="plumbeerApp.anuncio.user">user</span>
+                </td>
+                <td>
+                    {{anuncio.user.titulo}}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

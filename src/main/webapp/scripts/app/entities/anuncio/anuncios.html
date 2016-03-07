@@ -1,0 +1,64 @@
+<div>
+    <h2 translate="plumbeerApp.anuncio.home.title">Anuncios</h2>
+    <jh-alert></jh-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="anuncio.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span 
+                        translate="plumbeerApp.anuncio.home.createLabel">Create new Anuncio
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span translate="global.field.id">ID</span></th>
+                    <th><span translate="plumbeerApp.anuncio.titulo">Titulo</span></th>
+                    <th><span translate="plumbeerApp.anuncio.contenido">Contenido</span></th>
+                    <th><span translate="plumbeerApp.anuncio.publicacion">Publicacion</span></th>
+                    <th><span translate="plumbeerApp.anuncio.user">user</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="anuncio in anuncios track by anuncio.id">
+                    <td><a ui-sref="anuncio.detail({id:anuncio.id})">{{anuncio.id}}</a></td>
+                    <td>{{anuncio.titulo}}</td>
+                    <td>{{anuncio.contenido}}</td>
+                    <td>{{anuncio.publicacion | date:'medium'}}</td>
+                    <td>
+                        {{anuncio.user.titulo}}
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="anuncio.detail({id:anuncio.id})"
+                                    class="btn btn-info btn-sm"> 
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="anuncio.edit({id:anuncio.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="anuncio.delete({id:anuncio.id})"
+                                    class="btn btn-danger btn-sm">                                    
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

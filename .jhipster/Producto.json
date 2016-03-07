@@ -34,7 +34,8 @@
         {
             "fieldId": 3,
             "fieldName": "descripcion",
-            "fieldType": "String"
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
         },
         {
             "fieldId": 4,

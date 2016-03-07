@@ -1,0 +1,68 @@
+<div>
+    <h2 translate="plumbeerApp.opinion.home.title">Opinions</h2>
+    <jh-alert></jh-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="opinion.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span 
+                        translate="plumbeerApp.opinion.home.createLabel">Create new Opinion
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span translate="global.field.id">ID</span></th>
+                    <th><span translate="plumbeerApp.opinion.titulo">Titulo</span></th>
+                    <th><span translate="plumbeerApp.opinion.comentario">Comentario</span></th>
+                    <th><span translate="plumbeerApp.opinion.fecha">Fecha</span></th>
+                    <th><span translate="plumbeerApp.opinion.user">user</span></th>
+                    <th><span translate="plumbeerApp.opinion.anuncio">anuncio</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="opinion in opinions track by opinion.id">
+                    <td><a ui-sref="opinion.detail({id:opinion.id})">{{opinion.id}}</a></td>
+                    <td>{{opinion.titulo}}</td>
+                    <td>{{opinion.comentario}}</td>
+                    <td>{{opinion.fecha | date:'medium'}}</td>
+                    <td>
+                        {{opinion.user.titulo}}
+                    </td>
+                    <td>
+                        <a ui-sref="anuncio.detail({id:opinion.anuncio.id})">{{opinion.anuncio.titulo}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="opinion.detail({id:opinion.id})"
+                                    class="btn btn-info btn-sm"> 
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="opinion.edit({id:opinion.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="opinion.delete({id:opinion.id})"
+                                    class="btn btn-danger btn-sm">                                    
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

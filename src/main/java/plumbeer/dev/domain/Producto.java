@@ -30,6 +30,7 @@ public class Producto implements Serializable {
     @Column(name = "precio")
     private Double precio;
     
+    @Lob
     @Column(name = "descripcion")
     private String descripcion;
     

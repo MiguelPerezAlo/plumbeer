@@ -47,8 +47,9 @@ public class ProductoResourceIntTest {
 
     private static final Double DEFAULT_PRECIO = 1D;
     private static final Double UPDATED_PRECIO = 2D;
-    private static final String DEFAULT_DESCRIPCION = "AAAAA";
-    private static final String UPDATED_DESCRIPCION = "BBBBB";
+    
+    private static final String DEFAULT_DESCRIPCION = "A";
+    private static final String UPDATED_DESCRIPCION = "B";
 
     private static final byte[] DEFAULT_FOTO = TestUtil.createByteArray(1, "0");
     private static final byte[] UPDATED_FOTO = TestUtil.createByteArray(2, "1");
