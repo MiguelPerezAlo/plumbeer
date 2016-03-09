@@ -60,7 +60,22 @@
     }
 </style>
 <!-- endCSS -->
+<!-- script -->
+<script>
 
+
+
+    $(".card").click(selectAnimation);
+
+    function selectAnimation(){
+        $(".card-container").children().css("height","80px");
+        $(".card-container").children().css("width","80px")
+        $(this).children().css("height","+=40px");
+        $(this).children().css("width","+=40px");
+    }
+
+</script>
+<!-- endScript-->
 <div ng-cloak>
     <div class="row">
         <div class="card-container">
