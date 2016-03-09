@@ -76,8 +76,6 @@ public class UserResource {
     @Inject
     private UserService userService;
 
-    @Inject
-    private CiudadRepository ciudadRepository;
     /**
      * POST  /users -> Creates a new user.
      * <p>
