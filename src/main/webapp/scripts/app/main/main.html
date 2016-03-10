@@ -26,7 +26,7 @@
         left: 0;
         width: 100px;
         height: 100px;
-        border-radius: 5px;
+        border-radius: 50%;
         color: white;
         box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3), 0 17px 17px 0 rgba(0, 0, 0, 0.15);
         backface-visibility: hidden;
@@ -55,8 +55,8 @@
     }
 
     .card-container img{
-        width:75px;
-        height:75px;
+        width:60px;
+        height:60px;
     }
 </style>
 <!-- endCSS -->
@@ -87,7 +87,7 @@
             </div>
         </div>
         <div ng-controller="MainController">
-            <table border="1px" style="position:absolute; margin-left:500px; top:20%" id="tableProfiles">
+            <table border="1px" style="position:absolute; margin-left:500px; top:20%; display:none" id="tableProfiles">
                 <tr  ng-repeat="user in users">
                     <td>{{user.login}}</td>
                     <td>{{user.firstName}}</td>
