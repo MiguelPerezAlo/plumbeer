@@ -1,41 +1,38 @@
-<link rel="stylesheet" href="loginStyle.css"/>
-<div class="wrapper">
-    <div class="container">
-        <h1>Welcome to Plumbeer!</h1>
-        <div class="bton" id="register">Register</div>
-        <div class="bton" id="login">Login</div>
-        <form class="form" id="formulario" style="display:none">
-            <input type="text" placeholder="Username">
-            <input type="password" placeholder="Password">
-            <button type="submit" id="login-button">Login</button>
-        </form>
-    </div>
-
-    <ul class="bg-bubbles">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
-</div>
-
-<script>
-
-    window.addEventListener(load, inicio, false);
-
-    function inicio(){
-        var login = document.getElementById("login");
-        login.addEventListener("click",mostrarLogin,false);
-    }
-
-    function mostrarLogin(){
-        var formLogin = document.getElementById();
-    }
-
-</script>
+<html>
+    <head>
+        <title>Plumbeer</title>
+        <link rel="stylesheet" href="CSS/loginStyle.css"/>
+        <script src="jquery-1.9.1.js"></script>
+        <script src="JS/mostrarLoginRegister.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="container">
+                <h1>Welcome to Plumbeer!</h1>
+                <div class="bton" id="register">Register</div>
+                <div class="bton" id="login">Login</div>
+            </div>
+            <div class="forms">
+                <form id="logform">
+                    E-mail:<br>
+                    <input type="email" placeholder="Your registered e-mail" required/>
+                    Password:<br>
+                    <input type="password" required/>
+                    <input type="submit" id="btonlogin" value="Login"/>
+                </form>
+            </div>
+            <!--<ul class="bg-bubbles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>-->
+        </div>
+    </body>
+</html>

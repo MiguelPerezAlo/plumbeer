@@ -1,5 +1,6 @@
 {
     "login": {
+        "welcome": "Benvingut a Plumbeer!",
         "title": "Autenticació",
         "form": {
             "password": "Contrasenya",
