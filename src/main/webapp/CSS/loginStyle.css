@@ -57,6 +57,10 @@ body :-ms-input-placeholder {
     padding: 80px 0;
     height: 400px;
     text-align: center;
+    position:absolute;
+    left: 40%;
+    top: 32%;
+
 }
 .container h1 {
     font-size: 40px;
@@ -236,15 +240,20 @@ form button:hover {
     border-radius: 20px;
     display: inline-block;
     font-size: 25px;
+    text-decoration: none;
 }
 
 #login, #register, #btonlogin{
     cursor:pointer;
 }
 
-#logform{
+.forms{
     display:none;
     position:absolute;
-    left: 43.5%;
+    left: 43%;
     top: 28%;
+}
+
+a{
+    color:white;
 }

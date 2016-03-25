@@ -5,20 +5,16 @@
         <script src="jquery-1.9.1.js"></script>
         <script src="JS/mostrarLoginRegister.js"></script>
     </head>
-    <body>
+    <body ng-app="plumbeerApp">
         <div class="wrapper">
             <div class="container">
                 <h1>Welcome to Plumbeer!</h1>
                 <div class="bton" id="register">Register</div>
-                <div class="bton" id="login">Login</div>
+                <a ui-sref="login" class="bton" id="login">Login</a>
             </div>
             <div class="forms">
-                <form id="logform">
-                    E-mail:<br>
-                    <input type="email" placeholder="Your registered e-mail" required/>
-                    Password:<br>
-                    <input type="password" required/>
-                    <input type="submit" id="btonlogin" value="Login"/>
+                <form action="indexTrue.html">
+                    <div ui-view="content"></div>
                 </form>
             </div>
             <!--<ul class="bg-bubbles">
@@ -36,3 +32,147 @@
         </div>
     </body>
 </html>
+
+
+
+<!-- build:js scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="bower_components/angular-cache-buster/angular-cache-buster.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-dynamic-locale/src/tmhDynamicLocale.js"></script>
+<script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+<script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-translate/angular-translate.js"></script>
+<script src="bower_components/messageformat/messageformat.js"></script>
+<script src="bower_components/angular-translate-interpolation-messageformat/angular-translate-interpolation-messageformat.js"></script>
+<script src="bower_components/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
+<script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/json3/lib/json3.js"></script>
+<script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
+<script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+
+<!-- build:js({.tmp,src/main/webapp}) scripts/app.js -->
+<script src="scripts/app/app.js"></script>
+<script src="scripts/app/app.constants.js"></script>
+<script src="scripts/components/auth/auth.service.js"></script>
+<script src="scripts/components/auth/principal.service.js"></script>
+<script src="scripts/components/auth/authority.directive.js"></script>
+<script src="scripts/components/auth/services/account.service.js"></script>
+<script src="scripts/components/auth/services/activate.service.js"></script>
+<script src="scripts/components/auth/services/password.service.js"></script>
+<script src="scripts/components/auth/services/register.service.js"></script>
+<script src="scripts/components/form/form.directive.js"></script>
+<script src="scripts/components/form/maxbytes.directive.js"></script>
+<script src="scripts/components/form/minbytes.directive.js"></script>
+<script src="scripts/components/form/uib-pager.config.js"></script>
+<script src="scripts/components/form/uib-pagination.config.js"></script>
+<script src="scripts/components/admin/audits.service.js"></script>
+<script src="scripts/components/admin/logs.service.js"></script>
+<script src="scripts/components/admin/configuration.service.js"></script>
+<script src="scripts/components/admin/monitoring.service.js"></script>
+<script src="scripts/components/interceptor/auth.interceptor.js"></script>
+<script src="scripts/components/interceptor/errorhandler.interceptor.js"></script>
+<script src="scripts/components/interceptor/notification.interceptor.js"></script>
+<script src="scripts/components/navbar/navbar.directive.js"></script>
+<script src="scripts/components/navbar/navbar.controller.js"></script>
+<script src="scripts/components/user/user.service.js"></script>
+<script src="scripts/components/util/truncate.filter.js"></script>
+<script src="scripts/components/util/base64.service.js"></script>
+<script src="scripts/components/util/capitalize.filter.js"></script>
+<script src="scripts/components/alert/alert.service.js"></script>
+<script src="scripts/components/alert/alert.directive.js"></script>
+<script src="scripts/components/util/parse-links.service.js"></script>
+<script src="scripts/components/util/date-util.service.js"></script>
+<script src="scripts/components/util/data-util.service.js"></script>
+<script src="scripts/components/util/sort.directive.js"></script>
+<script src="scripts/app/account/account.js"></script>
+<script src="scripts/app/account/activate/activate.js"></script>
+<script src="scripts/app/account/activate/activate.controller.js"></script>
+<script src="scripts/app/account/login/login.js"></script>
+<script src="scripts/app/account/login/login.controller.js"></script>
+<script src="scripts/app/account/password/password.js"></script>
+<script src="scripts/app/account/password/password.controller.js"></script>
+<script src="scripts/app/account/password/password.directive.js"></script>
+<script src="scripts/app/account/register/register.js"></script>
+<script src="scripts/app/account/register/register.controller.js"></script>
+<script src="scripts/app/account/settings/settings.js"></script>
+<script src="scripts/app/account/settings/settings.controller.js"></script>
+<script src="scripts/app/account/reset/finish/reset.finish.controller.js"></script>
+<script src="scripts/app/account/reset/finish/reset.finish.js"></script>
+<script src="scripts/app/account/reset/request/reset.request.controller.js"></script>
+<script src="scripts/app/account/reset/request/reset.request.js"></script>
+<script src="scripts/app/admin/admin.js"></script>
+<script src="scripts/app/admin/audits/audits.js"></script>
+<script src="scripts/app/admin/audits/audits.controller.js"></script>
+<script src="scripts/app/admin/configuration/configuration.js"></script>
+<script src="scripts/app/admin/configuration/configuration.controller.js"></script>
+<script src="scripts/app/admin/docs/docs.js"></script>
+<script src="scripts/app/admin/health/health.js"></script>
+<script src="scripts/app/admin/health/health.controller.js"></script>
+<script src="scripts/app/admin/health/health.modal.controller.js"></script>
+<script src="scripts/app/admin/logs/logs.js"></script>
+<script src="scripts/app/admin/logs/logs.controller.js"></script>
+<script src="scripts/app/admin/metrics/metrics.js"></script>
+<script src="scripts/app/admin/metrics/metrics.controller.js"></script>
+<script src="scripts/app/admin/metrics/metrics.modal.controller.js"></script>
+<script src="scripts/app/admin/user-management/user-management-detail.controller.js"></script>
+<script src="scripts/app/admin/user-management/user-management-dialog.controller.js"></script>
+<script src="scripts/app/admin/user-management/user-management-delete-dialog.controller.js"></script>
+<script src="scripts/app/admin/user-management/user-management.controller.js"></script>
+<script src="scripts/app/admin/user-management/user-management.js"></script>
+<script src="scripts/app/entities/entity.js"></script>
+<script src="scripts/app/error/error.js"></script>
+<script src="scripts/app/main/main.js"></script>
+<script src="scripts/app/main/main.controller.js"></script>
+<script src="bower_components/messageformat/locale/en.js"></script>
+<script src="bower_components/messageformat/locale/fr.js"></script>
+<script src="scripts/components/language/language.service.js"></script>
+<script src="scripts/components/language/language.controller.js"></script>
+<script src="scripts/components/auth/services/sessions.service.js"></script>
+<script src="scripts/components/auth/provider/auth.session.service.js"></script>
+<script src="scripts/app/account/sessions/sessions.js"></script>
+<script src="scripts/app/account/sessions/sessions.controller.js"></script>
+<script src="scripts/app/entities/ciudad/ciudad.js"></script>
+<script src="scripts/app/entities/ciudad/ciudad.controller.js"></script>
+<script src="scripts/app/entities/ciudad/ciudad-dialog.controller.js"></script>
+<script src="scripts/app/entities/ciudad/ciudad-delete-dialog.controller.js"></script>
+<script src="scripts/app/entities/ciudad/ciudad-detail.controller.js"></script>
+<script src="scripts/components/entities/ciudad/ciudad.service.js"></script>
+<script src="bower_components/messageformat/locale/ca.js"></script>
+<script src="bower_components/messageformat/locale/es.js"></script>
+<script src="scripts/app/entities/categoria/categoria.js"></script>
+<script src="scripts/app/entities/categoria/categoria.controller.js"></script>
+<script src="scripts/app/entities/categoria/categoria-dialog.controller.js"></script>
+<script src="scripts/app/entities/categoria/categoria-delete-dialog.controller.js"></script>
+<script src="scripts/app/entities/categoria/categoria-detail.controller.js"></script>
+<script src="scripts/components/entities/categoria/categoria.service.js"></script>
+<script src="scripts/app/entities/producto/producto.js"></script>
+<script src="scripts/app/entities/producto/producto.controller.js"></script>
+<script src="scripts/app/entities/producto/producto-dialog.controller.js"></script>
+<script src="scripts/app/entities/producto/producto-delete-dialog.controller.js"></script>
+<script src="scripts/app/entities/producto/producto-detail.controller.js"></script>
+<script src="scripts/components/entities/producto/producto.service.js"></script>
+<script src="scripts/app/entities/anuncio/anuncio.js"></script>
+<script src="scripts/app/entities/anuncio/anuncio.controller.js"></script>
+<script src="scripts/app/entities/anuncio/anuncio-dialog.controller.js"></script>
+<script src="scripts/app/entities/anuncio/anuncio-delete-dialog.controller.js"></script>
+<script src="scripts/app/entities/anuncio/anuncio-detail.controller.js"></script>
+<script src="scripts/components/entities/anuncio/anuncio.service.js"></script>
+<script src="scripts/app/entities/opinion/opinion.js"></script>
+<script src="scripts/app/entities/opinion/opinion.controller.js"></script>
+<script src="scripts/app/entities/opinion/opinion-dialog.controller.js"></script>
+<script src="scripts/app/entities/opinion/opinion-delete-dialog.controller.js"></script>
+<script src="scripts/app/entities/opinion/opinion-detail.controller.js"></script>
+<script src="scripts/components/entities/opinion/opinion.service.js"></script>
+<!-- endbuild -->'

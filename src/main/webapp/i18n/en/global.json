@@ -50,7 +50,8 @@
             "firstName": "First Name",
             "firstName.placeholder": "First name",
             "lastName": "Last Name",
-            "lastName.placeholder": "Last Name"
+            "lastName.placeholder": "Last Name",
+            "ciudad": "City"
         },
         "messages": {
             "info": {

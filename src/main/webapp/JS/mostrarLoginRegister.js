@@ -5,11 +5,16 @@ $(document).ready(iniciar);
 
 function iniciar(){
 
-    $("#login").click(mostrarLogin);
+    $("#login").click(moveContainer);
+}
+
+function moveContainer(){
+
+    $(".container").animate({top:"0"}, {duration:200}, {step:mostrarLogin()});
 }
 
 function mostrarLogin(){
 
-    $("#logform").css("display","inline-block");
+    $(".forms").css("display","inline-block");
 
 }
