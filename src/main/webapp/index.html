@@ -1,3 +1,4 @@
+<!DOCTYPE HTML>
 <html>
     <head>
         <title>Plumbeer</title>
@@ -9,11 +10,11 @@
         <div class="wrapper">
             <div class="container">
                 <h1>Welcome to Plumbeer!</h1>
-                <div class="bton" id="register">Register</div>
+                <a ui-sref="register" class="bton" id="register">Register</a>
                 <a ui-sref="login" class="bton" id="login">Login</a>
             </div>
             <div class="forms">
-                <form action="indexTrue.html">
+                <form>
                     <div ui-view="content"></div>
                 </form>
             </div>
