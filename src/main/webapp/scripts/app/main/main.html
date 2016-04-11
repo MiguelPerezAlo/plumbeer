@@ -1,14 +1,14 @@
 <div ng-cloak>
-    <div class="row">
-        <div class="card-container" id="user">
+    <div class="row cartas" id="fila1">
+        <div class="card-container col-xs-12 col-sm-12 col-md-4 col-lg-4" id="user">
             <div class="card" class="user">
                 <div class="front" class="user">
-                    <img src="../../../IMAGENES/profile.png"/>
+                    <img src="../../../IMAGENES/profile.png"/></a>
                 </div>
-                <div class="back" class="user">Profiles</div>
+                <a ui-sref="settings"><div class="back" class="user">Profile</div></a>
             </div>
         </div>
-        <div class="card-container" id="shop">
+        <div class="card-container col-xs-12 col-sm-12 col-md-4 col-lg-4" id="shop">
             <div class="card">
                 <div class="front">
                     <img src="../../../IMAGENES/shop.png"/>
@@ -16,7 +16,7 @@
                 <div class="back">Shop</div>
             </div>
         </div>
-        <div class="card-container" id="com">
+        <div class="card-container col-xs-12 col-sm-12 col-md-4 col-lg-4" id="com">
             <div class="card">
                 <div class="front">
                     <img src="../../../IMAGENES/community.png"/>
@@ -24,7 +24,9 @@
                 <div class="back">Community</div>
             </div>
         </div>
-        <div class="card-container" id="post">
+    </div>
+        <div class="row cartas" id="fila2">
+        <div class="card-container col-xs-12 col-sm-12 col-md-4 col-lg-4" id="post">
             <div class="card">
                 <div class="front">
                     <img src="../../../IMAGENES/posts.png"/>
@@ -32,7 +34,7 @@
                 <div class="back">Your Posts</div>
             </div>
         </div>
-        <div class="card-container" id="search">
+        <div class="card-container col-xs-12 col-sm-12 col-md-4 col-lg-4" id="search">
             <div class="card">
                 <div class="front">
                     <img src="../../../IMAGENES/search.png"/>
@@ -40,18 +42,18 @@
                 <div class="back">Search</div>
             </div>
         </div>
-        <div class="card-container" id="logout">
+        <div class="card-container col-xs-12 col-sm-12 col-md-4 col-lg-4" id="lout">
             <div class="card">
                 <div class="front">
                     <img src="../../../IMAGENES/logout.png"/>
                 </div>
-                <div class="back">Logout</div>
+                <div class="back">Sign out</div>
             </div>
         </div>
-        <div class="menu" id="bmenu">
+            </div>
+       <!-- <div class="menu" id="bmenu">
             <div class="esfera">
                 <img src="../../../IMAGENES/menu.png"/>
             </div>
-        </div>
-    </div>
+        </div>-->
 </div>
