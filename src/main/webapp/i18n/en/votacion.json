@@ -1,0 +1,25 @@
+{
+    "plumbeerApp": {
+        "votacion" : {
+            "home": {
+                "title": "Votacions",
+                "createLabel": "Create a new Votacion",
+                "createOrEditLabel": "Create or edit a Votacion",
+                "search": "Search for Votacion"
+            },
+            "created": "A new Votacion is created with identifier {{ param }}",
+            "updated": "A Votacion is updated with identifier {{ param }}",
+            "deleted": "A Votacion is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Votacion {{ id }}?"
+            },
+            "detail": {
+                "title": "Votacion"
+            },
+            "positivo": "Positivo",
+            "motivo": "Motivo",
+            "votante": "Votante",
+            "votado": "Votado"
+        }
+    }
+}

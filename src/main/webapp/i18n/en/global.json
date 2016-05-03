@@ -12,6 +12,7 @@
                 "producto": "Producto",
                 "anuncio": "Anuncio",
                 "opinion": "Opinion",
+                "votacion": "Votacion",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

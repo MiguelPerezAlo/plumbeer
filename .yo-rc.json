@@ -9,7 +9,7 @@
     "websocket": "no",
     "databaseType": "sql",
     "devDatabaseType": "mysql",
-    "prodDatabaseType": "mysql",
+    "prodDatabaseType": "postgresql",
     "searchEngine": "no",
     "useSass": false,
     "buildTool": "maven",

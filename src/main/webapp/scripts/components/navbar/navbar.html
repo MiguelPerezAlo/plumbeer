@@ -7,7 +7,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#/" id="titulo"><img src="../../../IMAGENES/plumbeer_titulo.png"></a>
+            <a class="navbar-brand" href="#/" id="titulo"><img src="../../../IMAGENES/plumbeer_titulo.png" style="cursor:pointer"></a>
+            <script>
+                $("#titulo").mouseenter(function(){$(this).fadeTo("fast",0.5)});
+                $("#titulo").mouseleave(function(){$(this).fadeTo("fast",1)})
+            </script>
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse" ng-switch="isAuthenticated()">
             <ul class="nav navbar-nav navbar-right">
@@ -33,6 +37,8 @@
                         &#xA0;<span translate="global.menu.entities.anuncio">Anuncio</span></a></li>
                         <li ui-sref-active="active" ><a ui-sref="opinion" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
                         &#xA0;<span translate="global.menu.entities.opinion">Opinion</span></a></li>
+                        <li ui-sref-active="active" ><a ui-sref="votacion" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
+                        &#xA0;<span translate="global.menu.entities.votacion">Votacion</span></a></li>
                         <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
                     </ul>
                 </li>

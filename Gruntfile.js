@@ -56,7 +56,7 @@ module.exports = function (grunt) {
         },
         wiredep: {
             app: {
-                src: ['src/main/webapp/indexTrue.html'],
+                src: ['src/main/webapp/index.html'],
                 exclude: [
                     /angular-i18n/  // localizations are loaded dynamically
                 ]
@@ -145,7 +145,7 @@ module.exports = function (grunt) {
             }
         },
         useminPrepare: {
-            html: 'src/main/webapp/indexTrue.html',
+            html: 'src/main/webapp/index.html',
             options: {
                 dest: '<%= yeoman.dist %>',
                 flow: {
