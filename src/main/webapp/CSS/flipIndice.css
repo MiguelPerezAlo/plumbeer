@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+/*@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 .menu{
     perspective: 900px;
@@ -37,7 +37,7 @@
     /*position:absolute;
     margin-top:18.5%;
     margin-left:34.3%;
-    display:none;*/
+    display:none;
 }
 
 .card{
@@ -88,16 +88,17 @@
 .card-container img{
     width:60px;
     height:60px;
-}
+}*/
 
 #titulo img{
     position:absolute;
     top:0;
-    left:100px;
+    left:5px;
     width:150px;
     height:60px;
 }
 
+/*
 #lout>.card>*{
     background-color: red !important;
 }
@@ -112,4 +113,21 @@
 
 #fila2{
     margin-top:50px;
+}
+
+#hogar{
+    position:fixed;
+    top:0;
+}
+
+#hogar>img{
+    width:20%;
+}
+*/
+
+#footer{
+    z-index:9999;
+    text-align:center;
+    color: lightslategray;
+    font-size: 70%;
 }

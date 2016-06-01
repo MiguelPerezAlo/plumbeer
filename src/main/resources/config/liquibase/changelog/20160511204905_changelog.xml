@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+   <changeSet author="miguel.perez (generated)" id="1462992574328-1">
+      <createTable tableName="post">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="postPK"/>
+         </column>
+         <column name="contenido" type="CLOB"/>
+         <column name="fecha" type="datetime"/>
+         <column name="titulo" type="VARCHAR(255)"/>
+         <column name="autor_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="miguel.perez (generated)" id="1462992574328-2">
+      <createTable tableName="votacion">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="votacionPK"/>
+         </column>
+         <column name="motivo" type="CLOB"/>
+         <column name="positivo" type="BOOLEAN"/>
+         <column name="votado_id" type="BIGINT"/>
+         <column name="votante_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="miguel.perez (generated)" id="1462992574328-3">
+      <createTable tableName="voto_post">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="voto_postPK"/>
+         </column>
+         <column name="motivo" type="CLOB"/>
+         <column name="positivo" type="BOOLEAN"/>
+         <column name="post_id" type="BIGINT"/>
+         <column name="votante_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="miguel.perez (generated)" id="1462992574328-4">
+      <addForeignKeyConstraint baseColumnNames="votado_id"
+                               baseTableName="votacion"
+                               constraintName="FK_39fu1i7gud47dmd5r1wt5wf3l"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="miguel.perez (generated)" id="1462992574328-5">
+      <addForeignKeyConstraint baseColumnNames="autor_id"
+                               baseTableName="post"
+                               constraintName="FK_8y2xf0chlx34ajpwsgyy5s5ut"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="miguel.perez (generated)" id="1462992574328-6">
+      <addForeignKeyConstraint baseColumnNames="votante_id"
+                               baseTableName="voto_post"
+                               constraintName="FK_m111a0gcooo00ibyqpdoy5gxm"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="miguel.perez (generated)" id="1462992574328-7">
+      <addForeignKeyConstraint baseColumnNames="votante_id"
+                               baseTableName="votacion"
+                               constraintName="FK_ni84a588uq9t47wnpuul3yc5u"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="miguel.perez (generated)" id="1462992574328-8">
+      <addForeignKeyConstraint baseColumnNames="post_id"
+                               baseTableName="voto_post"
+                               constraintName="FK_qpaxhtcoyyolsenje5v8hy3eh"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="post"/>
+   </changeSet>
+   <changeSet author="miguel.perez (generated)" id="1462992574328-9">
+      <dropNotNullConstraint columnDataType="varchar(255)"
+                             columnName="foto_content_type"
+                             tableName="producto"/>
+   </changeSet>
+</databaseChangeLog>

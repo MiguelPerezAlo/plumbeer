@@ -1,0 +1,35 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "post",
+            "otherEntityName": "post",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "votante",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "positivo",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "motivo",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        }
+    ],
+    "changelogDate": "20160503152742",
+    "dto": "no",
+    "service": "no",
+    "pagination": "no"
+}

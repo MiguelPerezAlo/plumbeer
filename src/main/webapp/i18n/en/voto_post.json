@@ -1,0 +1,25 @@
+{
+    "plumbeerApp": {
+        "voto_post" : {
+            "home": {
+                "title": "Voto_posts",
+                "createLabel": "Create a new Voto_post",
+                "createOrEditLabel": "Create or edit a Voto_post",
+                "search": "Search for Voto_post"
+            },
+            "created": "A new Voto_post is created with identifier {{ param }}",
+            "updated": "A Voto_post is updated with identifier {{ param }}",
+            "deleted": "A Voto_post is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Voto_post {{ id }}?"
+            },
+            "detail": {
+                "title": "Voto_post"
+            },
+            "positivo": "Positivo",
+            "motivo": "Motivo",
+            "post": "Post",
+            "votante": "Votante"
+        }
+    }
+}
