@@ -1,14 +1,12 @@
 <div>
-    <h2 translate="plumbeerApp.ciudad.home.title">Ciudads</h2>
+    <h2>Ciudad</h2>
     <jh-alert></jh-alert>
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-4 no-padding-left">
                 <button class="btn btn-primary" ui-sref="ciudad.new" >
                     <span class="glyphicon glyphicon-plus"></span>
-                    <span 
-                        translate="plumbeerApp.ciudad.home.createLabel">Create new Ciudad
-                    </span>
+                    <span>Añadir ciudad</span>
                 </button>
             </div>
         </div>
@@ -31,7 +29,7 @@
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"
                                     ui-sref="ciudad.detail({id:ciudad.id})"
-                                    class="btn btn-info btn-sm"> 
+                                    class="btn btn-info btn-sm">
                                 <span class="glyphicon glyphicon-eye-open"></span>
                                 <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
                             </button>
@@ -43,7 +41,7 @@
                             </button>
                             <button type="submit"
                                     ui-sref="ciudad.delete({id:ciudad.id})"
-                                    class="btn btn-danger btn-sm">                                    
+                                    class="btn btn-danger btn-sm">
                                 <span class="glyphicon glyphicon-remove-circle"></span>
                                 <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
                             </button>

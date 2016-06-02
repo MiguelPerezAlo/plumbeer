@@ -2,7 +2,10 @@ package plumbeer.dev.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import plumbeer.dev.domain.Producto;
+import plumbeer.dev.domain.User;
 import plumbeer.dev.repository.ProductoRepository;
+import plumbeer.dev.repository.UserRepository;
+import plumbeer.dev.security.SecurityUtils;
 import plumbeer.dev.web.rest.util.HeaderUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,10 +30,13 @@ import java.util.Optional;
 public class ProductoResource {
 
     private final Logger log = LoggerFactory.getLogger(ProductoResource.class);
-        
+
     @Inject
     private ProductoRepository productoRepository;
-    
+
+    @Inject
+    private UserRepository userRepository;
+
     /**
      * POST  /productos -> Create a new producto.
      */
@@ -43,6 +49,8 @@ public class ProductoResource {
         if (producto.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("producto", "idexists", "A new producto cannot already have an ID")).body(null);
         }
+        User user = userRepository.findOneByLogin(SecurityUtils.getCurrentUserLogin()).get();
+        producto.setUser(user);
         Producto result = productoRepository.save(producto);
         return ResponseEntity.created(new URI("/api/productos/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert("producto", result.getId().toString()))
