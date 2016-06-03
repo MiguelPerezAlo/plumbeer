@@ -2,7 +2,10 @@ package plumbeer.dev.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import plumbeer.dev.domain.Post;
+import plumbeer.dev.domain.User;
 import plumbeer.dev.repository.PostRepository;
+import plumbeer.dev.repository.UserRepository;
+import plumbeer.dev.security.SecurityUtils;
 import plumbeer.dev.web.rest.util.HeaderUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,6 +18,8 @@ import org.springframework.web.bind.annotation.*;
 import javax.inject.Inject;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,10 +31,13 @@ import java.util.Optional;
 public class PostResource {
 
     private final Logger log = LoggerFactory.getLogger(PostResource.class);
-        
+
     @Inject
     private PostRepository postRepository;
-    
+
+    @Inject
+    private UserRepository userRepository;
+
     /**
      * POST  /posts -> Create a new post.
      */
@@ -42,6 +50,10 @@ public class PostResource {
         if (post.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("post", "idexists", "A new post cannot already have an ID")).body(null);
         }
+        User user = userRepository.findOneByLogin(SecurityUtils.getCurrentUserLogin()).get();
+        post.setAutor(user);
+        ZonedDateTime z = ZonedDateTime.now(ZoneId.systemDefault());
+        post.setFecha(z);
         Post result = postRepository.save(post);
         return ResponseEntity.created(new URI("/api/posts/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert("post", result.getId().toString()))
