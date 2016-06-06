@@ -16,6 +16,6 @@ public interface MensajeRepository extends JpaRepository<Mensaje,Long> {
     List<Mensaje> findByEmisorIsCurrentUser();
 
     @Query("select mensaje from Mensaje mensaje where mensaje.receptor.login = ?#{principal.username}")
-    Page<Mensaje> findByReceptorIsCurrentUser();
+    List<Mensaje> findByReceptorIsCurrentUser();
 
 }
