@@ -8,10 +8,12 @@ angular.module('plumbeerApp')
             $uibModalInstance.dismiss('cancel');
         };
         $scope.confirmDelete = function (id) {
-            Post.delete({id: id},
-                function () {
-                    $uibModalInstance.close(true);
-                });
+
+                Post.delete({id: id},
+                    function () {
+                        $uibModalInstance.close(true);
+                    });
+
         };
 
     });

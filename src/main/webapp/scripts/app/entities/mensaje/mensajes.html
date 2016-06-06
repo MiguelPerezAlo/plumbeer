@@ -3,12 +3,10 @@
     <jh-alert></jh-alert>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-xs-4 no-padding-left">
-                <button class="btn btn-primary" ui-sref="mensaje.new" >
-                    <span class="glyphicon glyphicon-plus"></span>
-                    <span
-                        translate="plumbeerApp.mensaje.home.createLabel">Create new Mensaje
-                    </span>
+            <div class="col-xs-4 no-padding-left" onmouseenter="$('#texto').slideToggle();" onmouseleave="$('#texto').slideToggle();">
+                <button class="btn btn-primary" ui-sref="mensaje.new">
+                    <span class="glyphicon glyphicon-pencil" ></span>
+                    <span id="texto" style="display:none">Nuevo mensaje</span>
                 </button>
             </div>
         </div>
@@ -18,29 +16,21 @@
         <table class="jh-table table table-striped">
             <thead>
                 <tr jh-sort="predicate" ascending="reverse" callback="loadAll()">
-                    <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="emisor.id"><span translate="plumbeerApp.mensaje.emisor">emisor</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="asunto"><span translate="plumbeerApp.mensaje.asunto">Asunto</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="cuerpo"><span translate="plumbeerApp.mensaje.cuerpo">Cuerpo</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="fecha"><span translate="plumbeerApp.mensaje.fecha">Fecha</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="leido"><span translate="plumbeerApp.mensaje.leido">Leido</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="emisor.id"><span translate="plumbeerApp.mensaje.emisor">emisor</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="receptor.id"><span translate="plumbeerApp.mensaje.receptor">receptor</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="mensaje in mensajes track by mensaje.id">
-                    <td><a ui-sref="mensaje.detail({id:mensaje.id})">{{mensaje.id}}</a></td>
-                    <td>{{mensaje.asunto}}</td>
-                    <td>{{mensaje.cuerpo}}</td>
-                    <td>{{mensaje.fecha | date:'medium'}}</td>
-                    <td>{{mensaje.leido}}</td>
                     <td>
-                        {{mensaje.emisor.firstName}}
+                        <a ui-sref="mensaje.detail({id:mensaje.id})" style="text-decoration:none; color:black;">{{mensaje.emisor.firstName}} {{mensaje.emisor.lastName}}</a>
                     </td>
-                    <td>
-                        {{mensaje.receptor.firstName}}
-                    </td>
+                    <td><a ui-sref="mensaje.detail({id:mensaje.id})" style="text-decoration:none; color:black">{{mensaje.asunto}}</a></td>
+                    <td><a ui-sref="mensaje.detail({id:mensaje.id})" style="text-decoration:none; color:black">{{mensaje.cuerpo}}</a></td>
+                    <td><a ui-sref="mensaje.detail({id:mensaje.id})" style="text-decoration:none; color:black;">{{mensaje.fecha | date:'medium'}}</a></td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"
@@ -48,12 +38,6 @@
                                     class="btn btn-info btn-sm">
                                 <span class="glyphicon glyphicon-eye-open"></span>
                                 <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="mensaje.edit({id:mensaje.id})"
-                                    class="btn btn-primary btn-sm">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
                             </button>
                             <button type="submit"
                                     ui-sref="mensaje.delete({id:mensaje.id})"

@@ -1,10 +1,16 @@
 
 <div>
-    <h2><span translate="plumbeerApp.post.detail.title">Post</span> {{post.id}}</h2>
-    <div class="table-responsive">
+    <h2><span>{{post.titulo}}</span></h2>
+    <div>
+        {{post.contenido}}
+    </div>
+    <div style="font-size: smaller; text-align: right">
+        Publicado por {{post.autor.firstName}} {{post.autor.lastName}} {{post.fecha | date:'medium'}}
+    </div>
+    <!--<div class="table-responsive">
         <table class="table table-striped">
             <thead>
-            <tr>
+            <!--<tr>
                 <th translate="entity.detail.field">Field</th>
                 <th translate="entity.detail.value">Value</th>
             </tr>
@@ -44,8 +50,7 @@
             </tr>
             </tbody>
         </table>
-    </div>
-
+    </div>-->
     <button type="submit"
             onclick="window.history.back()"
             class="btn btn-info">

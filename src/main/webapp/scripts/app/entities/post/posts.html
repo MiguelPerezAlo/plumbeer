@@ -1,14 +1,12 @@
 <div>
-    <h2 translate="plumbeerApp.post.home.title">Posts</h2>
+    <h2>Publicaciones</h2>
     <jh-alert></jh-alert>
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-4 no-padding-left">
                 <button class="btn btn-primary" ui-sref="post.new" >
                     <span class="glyphicon glyphicon-plus"></span>
-                    <span 
-                        translate="plumbeerApp.post.home.createLabel">Create new Post
-                    </span>
+                    <span>Nueva entrada</span>
                 </button>
             </div>
         </div>
@@ -16,33 +14,33 @@
     <br/>
     <div class="table-responsive">
         <table class="jh-table table table-striped">
-            <thead>
+           <thead>
                 <tr>
-                    <th><span translate="global.field.id">ID</span></th>
+                    <!--<th><span translate="global.field.id">ID</span></th>-->
                     <th><span translate="plumbeerApp.post.titulo">Titulo</span></th>
-                    <th><span translate="plumbeerApp.post.contenido">Contenido</span></th>
+                    <!--<th><span translate="plumbeerApp.post.contenido">Contenido</span></th>-->
+                    <th><span translate="plumbeerApp.post.autor">Autor</span></th>
                     <th><span translate="plumbeerApp.post.fecha">Fecha</span></th>
-                    <th><span translate="plumbeerApp.post.autor">autor</span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="post in posts track by post.id">
-                    <td><a ui-sref="post.detail({id:post.id})">{{post.id}}</a></td>
-                    <td>{{post.titulo}}</td>
-                    <td>{{post.contenido}}</td>
+                   <!-- <td><a ui-sref="post.detail({id:post.id})">{{post.id}}</a></td> -->
+                    <th><a ui-sref="post.detail({id:post.id})" style="text-decoration: none">{{post.titulo}}</a></th><td>{{post.autor.firstName}} {{post.autor.lastName}}</td>
+                    <!--<td>{{post.contenido}}</td>-->
                     <td>{{post.fecha | date:'medium'}}</td>
-                    <td>
+                    <!--<td>
                         {{post.autor.id}}
-                    </td>
+                    </td>-->
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
-                            <button type="submit"
+                            <!--<button type="submit"
                                     ui-sref="post.detail({id:post.id})"
-                                    class="btn btn-info btn-sm"> 
+                                    class="btn btn-info btn-sm">
                                 <span class="glyphicon glyphicon-eye-open"></span>
                                 <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
-                            </button>
+                            </button>-->
                             <button type="submit"
                                     ui-sref="post.edit({id:post.id})"
                                     class="btn btn-primary btn-sm">
@@ -51,7 +49,7 @@
                             </button>
                             <button type="submit"
                                     ui-sref="post.delete({id:post.id})"
-                                    class="btn btn-danger btn-sm">                                    
+                                    class="btn btn-danger btn-sm">
                                 <span class="glyphicon glyphicon-remove-circle"></span>
                                 <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
                             </button>
