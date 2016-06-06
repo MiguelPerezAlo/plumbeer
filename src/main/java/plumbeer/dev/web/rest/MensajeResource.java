@@ -117,22 +117,6 @@ public class MensajeResource {
     }
 
     /**
-     * GET /mensajes/:receptor -> get the "receptor" mensaje
-     */
-
-    @RequestMapping(value = "/mensajes/{receptor}",
-        method = RequestMethod.GET,
-        produces = MediaType.APPLICATION_JSON_VALUE)
-    @Timed
-    public ResponseEntity<List<Mensaje>> getMisMensajes(Pageable pageable, @PathVariable User receptor)
-        throws URISyntaxException {
-        log.debug("REST request to get a page of Mensajes");
-        Page<Mensaje> page = mensajeRepository.findByReceptorIsCurrentUser();
-        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/mensajes");
-        return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
-    }
-
-    /**
      * DELETE  /mensajes/:id -> delete the "id" mensaje.
      */
     @RequestMapping(value = "/mensajes/{id}",
