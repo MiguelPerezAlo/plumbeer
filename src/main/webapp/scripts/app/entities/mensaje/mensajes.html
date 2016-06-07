@@ -18,7 +18,6 @@
                 <tr jh-sort="predicate" ascending="reverse" callback="loadAll()">
                     <th jh-sort-by="emisor.id"><span translate="plumbeerApp.mensaje.emisor">emisor</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="asunto"><span translate="plumbeerApp.mensaje.asunto">Asunto</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="cuerpo"><span translate="plumbeerApp.mensaje.cuerpo">Cuerpo</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="fecha"><span translate="plumbeerApp.mensaje.fecha">Fecha</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
@@ -29,16 +28,9 @@
                         <a ui-sref="mensaje.detail({id:mensaje.id})" style="text-decoration:none; color:black;">{{mensaje.emisor.firstName}} {{mensaje.emisor.lastName}}</a>
                     </td>
                     <td><a ui-sref="mensaje.detail({id:mensaje.id})" style="text-decoration:none; color:black">{{mensaje.asunto}}</a></td>
-                    <td><a ui-sref="mensaje.detail({id:mensaje.id})" style="text-decoration:none; color:black">{{mensaje.cuerpo}}</a></td>
                     <td><a ui-sref="mensaje.detail({id:mensaje.id})" style="text-decoration:none; color:black;">{{mensaje.fecha | date:'medium'}}</a></td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
-                            <button type="submit"
-                                    ui-sref="mensaje.detail({id:mensaje.id})"
-                                    class="btn btn-info btn-sm">
-                                <span class="glyphicon glyphicon-eye-open"></span>
-                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
-                            </button>
                             <button type="submit"
                                     ui-sref="mensaje.delete({id:mensaje.id})"
                                     class="btn btn-danger btn-sm">

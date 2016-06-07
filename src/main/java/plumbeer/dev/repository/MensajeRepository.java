@@ -1,6 +1,7 @@
 package plumbeer.dev.repository;
 
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import plumbeer.dev.domain.Mensaje;
 
 import org.springframework.data.jpa.repository.*;
@@ -16,6 +17,6 @@ public interface MensajeRepository extends JpaRepository<Mensaje,Long> {
     List<Mensaje> findByEmisorIsCurrentUser();
 
     @Query("select mensaje from Mensaje mensaje where mensaje.receptor.login = ?#{principal.username}")
-    List<Mensaje> findByReceptorIsCurrentUser();
+    Page<Mensaje> findByReceptorIsCurrentUser(Pageable pageable);
 
 }

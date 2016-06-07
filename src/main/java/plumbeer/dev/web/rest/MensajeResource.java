@@ -94,10 +94,16 @@ public class MensajeResource {
     public ResponseEntity<List<Mensaje>> getAllMensajes(Pageable pageable)
         throws URISyntaxException {
         log.debug("REST request to get a page of Mensajes");
-        Page<Mensaje> page = mensajeRepository.findAll(pageable);
+        Page<Mensaje> page = mensajeRepository.findByReceptorIsCurrentUser(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/mensajes");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
+
+    /**
+     * GET /mensajes/:receptor -> get "receptor" mensaje
+     */
+
+
 
     /**
      * GET  /mensajes/:id -> get the "id" mensaje.
