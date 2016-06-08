@@ -18,5 +18,8 @@ public interface MensajeRepository extends JpaRepository<Mensaje,Long> {
 
     @Query("select mensaje from Mensaje mensaje where mensaje.receptor.login = ?#{principal.username}")
     Page<Mensaje> findByReceptorIsCurrentUser(Pageable pageable);
+    
+    @Query("select count(id) from Mensaje mensaje where leido = false and mensaje.receptor.login = ?#{principal.username}")
+    Integer findUnreadMensaje();
 
 }
