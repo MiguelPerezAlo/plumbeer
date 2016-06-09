@@ -37,7 +37,7 @@ spring:
         host: smtp.gmail.com
         port: 587
         username: plumbeerapp@gmail.com
-        password: Plumbeer2u
+        password: Stucom1234
         protocol: smtp
         tls: true
         properties.mail.smtp:
