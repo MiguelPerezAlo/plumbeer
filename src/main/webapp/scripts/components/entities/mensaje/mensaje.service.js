@@ -12,6 +12,11 @@ angular.module('plumbeerApp')
                     return data;
                 }
             },
-            'update': { method:'PUT' }
+            'update': { method:'PUT' },
+            'getMensajesEmisor':{
+                method: 'GET',
+                isArray: true,
+                url : 'api/emisor'
+            }
         });
     });

@@ -121,5 +121,26 @@ angular.module('plumbeerApp')
                         $state.go('^');
                     })
                 }]
+            })
+            .state('mensaje.emisor', {
+                parent: 'entity',
+                url: '/enviados',
+                data: {
+                    authorities: ['ROLE_USER'],
+                    pageTitle: 'plumbeerApp.mensaje.home.title'
+                },
+                views: {
+                    'content@': {
+                        templateUrl: 'scripts/app/entities/mensaje/enviados.html',
+                        controller: 'MensajeController'
+                    }
+                },
+                resolve: {
+                    translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+                        $translatePartialLoader.addPart('mensaje');
+                        $translatePartialLoader.addPart('global');
+                        return $translate.refresh();
+                    }]
+                }
             });
     });

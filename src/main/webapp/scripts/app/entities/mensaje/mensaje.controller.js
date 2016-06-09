@@ -20,7 +20,6 @@ angular.module('plumbeerApp')
         };
         $scope.loadAll();
 
-
         $scope.refresh = function () {
             $scope.loadAll();
             $scope.clear();
@@ -35,6 +34,8 @@ angular.module('plumbeerApp')
                 id: null
             };
         };
+
+        $scope.emisor = Mensaje.getMensajesEmisor();
 
         $scope.abbreviate = DataUtils.abbreviate;
 

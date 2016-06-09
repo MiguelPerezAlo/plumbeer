@@ -9,12 +9,11 @@
                     <span id="texto" style="display:none">Nuevo mensaje</span>
                 </button>
             </div>
-            </div>
-        <div class="row">
+        </div>
             <div class="col-xs-4 no-padding-left" onmouseenter="$('#text').slideToggle();" onmouseleave="$('#text').slideToggle();">
-                <button class="btn btn-primary" ui-sref="mensaje.emisor">
-                    <span class="glyphicon glyphicon-send" ></span>
-                    <span id="text" style="display:none">Enviados</span>
+                <button class="btn btn-primary" ui-sref="mensaje">
+                    <span class="glyphicon glyphicon-circle-arrow-down"></span>
+                    <span id="text" style="display:none">Recibidos</span>
                 </button>
             </div>
         </div>
@@ -24,32 +23,27 @@
         <table class="jh-table table table-striped">
             <thead>
             <tr jh-sort="predicate" ascending="reverse" callback="loadAll()">
-                <th jh-sort-by="emisor.id"><span translate="plumbeerApp.mensaje.emisor">emisor</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="receptor.id"><span translate="plumbeerApp.mensaje.receptor">Receptor</span> <span class="glyphicon glyphicon-sort"></span></th>
                 <th jh-sort-by="asunto"><span translate="plumbeerApp.mensaje.asunto">Asunto</span> <span class="glyphicon glyphicon-sort"></span></th>
                 <th jh-sort-by="fecha"><span translate="plumbeerApp.mensaje.fecha">Fecha</span> <span class="glyphicon glyphicon-sort"></span></th>
                 <th></th>
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="mensaje in mensajes track by mensaje.id">
+            <tr ng-repeat="mensaje in emisor track by mensaje.id">
                 <td>
-                    <a ui-sref="mensaje.detail({id:mensaje.id})" style="text-decoration:none; color:black;">{{mensaje.emisor.firstName}} {{mensaje.emisor.lastName}}</a>
+                    <a ui-sref="mensaje.detail({id:mensaje.id})" style="text-decoration:none; color:black;">{{mensaje.receptor.firstName}} {{mensaje.receptor.lastName}}</a>
                 </td>
                 <td><a ui-sref="mensaje.detail({id:mensaje.id})" style="text-decoration:none; color:black">{{mensaje.asunto}}</a></td>
                 <td><a ui-sref="mensaje.detail({id:mensaje.id})" style="text-decoration:none; color:black;">{{mensaje.fecha | date:'medium'}}</a></td>
-                <td class="text-right">
-                    <div class="btn-group flex-btn-group-container">
-                        <button type="submit"
-                                ui-sref="mensaje.delete({id:mensaje.id})"
-                                class="btn btn-danger btn-sm">
-                            <span class="glyphicon glyphicon-remove-circle"></span>
-                            <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
-                        </button>
-                    </div>
-                </td>
             </tr>
             </tbody>
         </table>
     </div>
     <uib-pager total-items="totalItems" ng-model="page" ng-change="loadAll()"></uib-pager>
 </div>
+
+
+<!--
+    $scope.enviados = Mensaje.getMensajesEmisor();
+-->

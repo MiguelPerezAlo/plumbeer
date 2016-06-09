@@ -99,6 +99,10 @@ public class MensajeResource {
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
 
+    /**
+     *
+     * Numero mensajes sin leer
+     */
     @RequestMapping(value = "/unread",
         method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
@@ -108,6 +112,22 @@ public class MensajeResource {
         log.debug("REST request to get a page of Mensajes");
         Integer unread = mensajeRepository.findUnreadMensaje();
         return unread;
+    }
+
+    /**
+     * GET MENSAJES POR EMISOR
+     */
+
+    @RequestMapping(value = "/emisor",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public ResponseEntity<List<Mensaje>> getMensajesEmisor(Pageable pageable)
+        throws URISyntaxException {
+        log.debug("REST request to get a page of Mensajes");
+        Page<Mensaje> emisor = mensajeRepository.findByEmisorIsCurrentUser(pageable);
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(emisor, "/api/mensajes");
+        return new ResponseEntity<>(emisor.getContent(), headers, HttpStatus.OK);
     }
 
 
