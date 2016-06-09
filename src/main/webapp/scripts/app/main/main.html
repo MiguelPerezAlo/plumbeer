@@ -1,12 +1,13 @@
 <div ng-cloak>
     <div class="row">
         <div class="col-md-2 col-lg-2">
-            <div style="height:50%; height:50%"><a ui-sref="mensaje" class="glyphicon glyphicon-inbox" style="font-size:500%; text-decoration:none; margin-bottom:50%"></a></div>
+            <div style="height:50%;"><a ui-sref="post" class="glyphicon glyphicon-list-alt" style="font-size:500%; text-decoration:none; margin-bottom:50%"></a></div>
+            <div class="badge" style="background-color:red">{{unread}}</div>
         </div>
     </div>
     <div class="row">
         <div class="col-md-2 col-lg-2">
-            <a ui-sref="post" class="glyphicon glyphicon-list-alt" style="font-size:500%; text-decoration:none; margin-bottom:50%"></a>
+            <a ui-sref="mensaje" class="glyphicon glyphicon-inbox" style="font-size:500%; text-decoration:none; margin-bottom:50%"></a>
         </div>
     </div>
         <!--<div class="col-md-4">

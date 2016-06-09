@@ -9,5 +9,8 @@ angular.module('plumbeerApp')
         $http.get("/api/users").then(function(response) {
             $scope.users = response.data;
         });
+        $http.get("/api/unread").then(function(response) {
+            $scope.unread = response.data;
+        });
     });
 

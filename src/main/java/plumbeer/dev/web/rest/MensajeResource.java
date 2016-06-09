@@ -99,10 +99,16 @@ public class MensajeResource {
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
 
-    /**
-     * GET /mensajes/:receptor -> get "receptor" mensaje
-     */
-
+    @RequestMapping(value = "/unread",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public Integer getUnreadMensajes()
+        throws URISyntaxException {
+        log.debug("REST request to get a page of Mensajes");
+        Integer unread = mensajeRepository.findUnreadMensaje();
+        return unread;
+    }
 
 
     /**
