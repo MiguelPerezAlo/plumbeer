@@ -1,19 +1,28 @@
 <div ng-cloak>
     <div class="row">
-        <div class="col-md-2 col-lg-2">
-            <div style="height:50%;"><a ui-sref="post" class="glyphicon glyphicon-list-alt" style="font-size:500%; text-decoration:none; margin-bottom:50%"></a></div>
-            <div class="badge" style="background-color:red">{{unread}}</div>
+        <img src="http://imageshack.com/a/img923/3688/6bT5wI.png" style="display:inline-block;position:absolute;">
+        <div class="col-md-12 col-lg-12" style="margin-left:45%; margin-top:3%"><h1 style="display:inline-block; margin-left: -6% !important;">Bienvenidos a Plumb<o style="color:mediumseagreen">ee</o>r</h1>
+            <div class="row" style="margin-top: 2%">
+                <div class="col-md-2 col-lg-2">
+                    <a ui-sref="post" class="glyphicon glyphicon-list-alt" style="font-size:500%; text-decoration:none; margin-bottom:50%"></a>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                    <a ui-sref="producto" class="glyphicon glyphicon-shopping-cart" style="font-size:500%; text-decoration:none; margin-bottom:50%"></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 col-lg-2">
+                    <a ui-sref="mensaje" class="glyphicon glyphicon-inbox" style="font-size:500%; text-decoration:none; margin-bottom:50%; z-index:1"></a>
+                    <div class="badge" style="position:absolute; background-color:red;margin-top:27%; margin-left: -15px; border-width:1px; border-style:solid; border-color:white; z-index:10">{{unread}}</div>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                    <a ui-sref="settings" class="glyphicon glyphicon-user" style="font-size:500%; text-decoration:none; margin-bottom:50%"></a>
+                </div>
+            </div>
         </div>
-        <div class="col-md-2 col-lg-2"><a ui-sref="producto" class="glyphicon glyphicon-shopping-cart" style="font-size:500%; text-decoration:none; margin-bottom:50%"></a></div>
     </div>
-    <div class="row">
-        <div class="col-md-2 col-lg-2">
-            <a ui-sref="mensaje" class="glyphicon glyphicon-inbox" style="font-size:500%; text-decoration:none; margin-bottom:50%"></a>
-        </div>
-        <div class="col-md-2 col-lg-2">
-            <a ui-sref="settings" class="glyphicon glyphicon-user" style="font-size:500%; text-decoration:none; margin-bottom:50%"></a>
-        </div>
-    </div>
+</div>
+
         <!--<div class="col-md-4">
             <span class="hipster img-responsive img-rounded"></span>
         </div>
@@ -51,5 +60,4 @@
                 <span translate="main.like">If you like JHipster, don't forget to give us a star on </span>&nbsp;<a href="https://github.com/jhipster/generator-jhipster" target="_blank" translate="main.github">Github</a>!
             </p>
         </div>-->
-</div>
 
