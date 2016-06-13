@@ -1,22 +1,26 @@
 <div ng-cloak>
     <div class="row">
         <img src="http://imageshack.com/a/img923/3688/6bT5wI.png" style="display:inline-block;position:absolute;">
-        <div class="col-md-12 col-lg-12" style="margin-left:45%; margin-top:3%"><h1 style="display:inline-block; margin-left: -6% !important;">Bienvenidos a Plumb<o style="color:mediumseagreen">ee</o>r</h1>
+        <div class="col-md-12 col-lg-12" style="margin-left:45%; margin-top:3%"><h1 style="display:inline-block; margin-left: -6% !important;"><b>Bienvenidos a Plumb</b><o style="color:mediumseagreen"><b>ee</b></o><b>r</b></h1>
             <div class="row" style="margin-top: 2%">
                 <div class="col-md-2 col-lg-2">
-                    <a ui-sref="post" class="glyphicon glyphicon-list-alt" style="font-size:500%; text-decoration:none; margin-bottom:50%"></a>
+                    <span id="art" style="display:none; color:mediumseagreen; margin-left:-5%; font-size:200%">Artículos</span><br/>
+                    <a ui-sref="post" class="glyphicon glyphicon-list-alt" style="font-size:500%; text-decoration:none; margin-bottom:50%" onmouseenter="$('#art').slideToggle()" onmouseleave="$('#art').slideToggle()"></a>
                 </div>
                 <div class="col-md-2 col-lg-2">
-                    <a ui-sref="producto" class="glyphicon glyphicon-shopping-cart" style="font-size:500%; text-decoration:none; margin-bottom:50%"></a>
+                    <span id="shop" style="display:none; color:mediumseagreen; margin-left:-5%; font-size:200%">Tienda</span><br/>
+                    <a ui-sref="producto" class="glyphicon glyphicon-shopping-cart" style="font-size:500%; text-decoration:none; margin-bottom:50%" onmouseenter="$('#shop').slideToggle()" onmouseleave="$('#shop').slideToggle()"></a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-2 col-lg-2">
-                    <a ui-sref="mensaje" class="glyphicon glyphicon-inbox" style="font-size:500%; text-decoration:none; margin-bottom:50%; z-index:1"></a>
+                    <span id="inbox" style="display:none; color:mediumseagreen; margin-left:-10%; font-size:200%">Mensajes</span><br/>
+                    <a ui-sref="mensaje" class="glyphicon glyphicon-inbox" style="font-size:500%; text-decoration:none; margin-bottom:50%; z-index:1" onmouseenter="$('#inbox').slideToggle()" onmouseleave="$('#inbox').slideToggle()"></a>
                     <div class="badge" style="position:absolute; background-color:red;margin-top:27%; margin-left: -15px; border-width:1px; border-style:solid; border-color:white; z-index:10">{{unread}}</div>
                 </div>
                 <div class="col-md-2 col-lg-2">
-                    <a ui-sref="settings" class="glyphicon glyphicon-user" style="font-size:500%; text-decoration:none; margin-bottom:50%"></a>
+                    <span id="prof" style="display:none; color:mediumseagreen; margin-left:0; font-size:200%">Perfil</span><br/>
+                    <a ui-sref="settings" class="glyphicon glyphicon-user" style="font-size:500%; text-decoration:none; margin-bottom:50%" onmouseenter="$('#prof').slideToggle()" onmouseleave="$('#prof').slideToggle()"></a>
                 </div>
             </div>
         </div>
