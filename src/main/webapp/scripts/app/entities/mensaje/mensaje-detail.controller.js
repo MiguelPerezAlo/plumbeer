@@ -13,5 +13,7 @@ angular.module('plumbeerApp')
         });
         $scope.$on('$destroy', unsubscribe);
 
+        Mensaje.setLeido({id: $scope.mensaje.id});
+
         $scope.byteSize = DataUtils.byteSize;
     });

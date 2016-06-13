@@ -130,6 +130,29 @@ public class MensajeResource {
         return new ResponseEntity<>(emisor.getContent(), headers, HttpStatus.OK);
     }
 
+    /**
+     * CAMBIAR MENSAJE A LEIDO
+     */
+
+    @RequestMapping(value = "/mensajes/{id}/leido",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public ResponseEntity<Mensaje> mensajeLeido(@PathVariable Long id) {
+        log.debug("REST request to get Mensaje : {}", id);
+        Mensaje mensaje = mensajeRepository.findOne(id);
+
+        mensaje.setLeido(true);
+
+        mensajeRepository.save(mensaje);
+
+        return Optional.ofNullable(mensaje)
+            .map(result -> new ResponseEntity<>(
+                result,
+                HttpStatus.OK))
+            .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    }
+
 
     /**
      * GET  /mensajes/:id -> get the "id" mensaje.

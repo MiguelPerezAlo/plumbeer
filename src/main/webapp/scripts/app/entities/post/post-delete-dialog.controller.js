@@ -2,7 +2,6 @@
 
 angular.module('plumbeerApp')
 	.controller('PostDeleteController', function($scope, $uibModalInstance, entity, Post) {
-
         $scope.post = entity;
         $scope.clear = function() {
             $uibModalInstance.dismiss('cancel');

@@ -17,6 +17,15 @@ angular.module('plumbeerApp')
                 method: 'GET',
                 isArray: true,
                 url : 'api/emisor'
-            }
+            },
+            'setLeido':{
+                method: 'GET', isArray: true, url: 'api/mensajes/:id/leido/',
+                interceptor: {
+                    response: function(response) {
+                        response.resource.$httpHeaders = response.headers;
+                        return response.resource;
+                    }
+                }
+            },
         });
     });
