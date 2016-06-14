@@ -4,15 +4,10 @@
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
                 ng-click="clear()">&times;</button>
-        <h4 class="modal-title" id="myProductoLabel" translate="plumbeerApp.producto.home.createOrEditLabel">Create or edit a Producto</h4>
+        <h4 class="modal-title" id="myProductoLabel">Vender producto</h4>
     </div>
     <div class="modal-body">
         <jh-alert-error></jh-alert-error>
-        <div class="form-group">
-            <label for="id" translate="global.field.id">ID</label>
-            <input type="text" class="form-control" id="id" name="id"
-                    ng-model="producto.id" readonly />
-        </div>
         <div class="form-group">
             <label class="control-label" translate="plumbeerApp.producto.nombre" for="field_nombre">Nombre</label>
             <input type="text" class="form-control" name="nombre" id="field_nombre"

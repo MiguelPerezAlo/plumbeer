@@ -1,5 +1,11 @@
 
 <div>
+    <h2>{{producto.nombre}}</h2>
+    <span style="font-size:small">Categoría: {{producto.categoria.nombre}}</span><br/>
+    <img data-ng-src="{{'data:' + producto.fotoContentType + ';base64,' + producto.foto}}" style="max-width: 100%;" ng-if="producto.foto"/><br/>
+    Precio: {{producto.precio}}€<br/>
+    Vendedor: {{producto.user.firstName}} {{producto.user.lastName}}<br/><br/>
+    <!--
     <h2><span translate="plumbeerApp.producto.detail.title">Producto</span> {{producto.id}}</h2>
     <div class="table-responsive">
         <table class="table table-striped">
@@ -62,7 +68,7 @@
             </tbody>
         </table>
     </div>
-
+-->
     <button type="submit"
             onclick="window.history.back()"
             class="btn btn-info">

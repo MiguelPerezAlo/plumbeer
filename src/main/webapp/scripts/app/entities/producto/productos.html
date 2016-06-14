@@ -1,33 +1,24 @@
 <div>
-    <h2 translate="plumbeerApp.producto.home.title">Productos</h2>
+    <h2>Tienda</h2>
     <jh-alert></jh-alert>
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-4 no-padding-left">
                 <button class="btn btn-primary" ui-sref="producto.new" >
-                    <span class="glyphicon glyphicon-plus"></span>
-                    <span 
-                        translate="plumbeerApp.producto.home.createLabel">Create new Producto
-                    </span>
+                    <span class="glyphicon glyphicon-piggy-bank"></span>
+                    <span>Véndelo</span>
                 </button>
             </div>
         </div>
     </div>
     <br/>
-    <div class="table-responsive">
+    <div  ng-repeat="producto in productos track by producto.id" class="col-md-4 col-lg-4">
+        <a ui-sref="producto.detail({id:producto.id})" style="text-decoration:none; color:black"><img data-ng-src="{{'data:' + producto.fotoContentType + ';base64,' + producto.foto}}" style="width:50%;" ng-if="producto.foto"/></a>
+        <a ui-sref="producto.detail({id:producto.id})" style="text-decoration:none; color:black"><h4>{{producto.nombre}}</h4></a>
+        <a ui-sref="producto.detail({id:producto.id})" style="text-decoration:none; color:black">{{producto.precio}}€</a>
+    </div>
+    <!--<div class="table-responsive">
         <table class="jh-table table table-striped">
-            <thead>
-                <tr>
-                    <th><span translate="global.field.id">ID</span></th>
-                    <th><span translate="plumbeerApp.producto.nombre">Nombre</span></th>
-                    <th><span translate="plumbeerApp.producto.precio">Precio</span></th>
-                    <th><span translate="plumbeerApp.producto.descripcion">Descripcion</span></th>
-                    <th><span translate="plumbeerApp.producto.foto">Foto</span></th>
-                    <th><span translate="plumbeerApp.producto.categoria">categoria</span></th>
-                    <th><span translate="plumbeerApp.producto.user">user</span></th>
-                    <th></th>
-                </tr>
-            </thead>
             <tbody>
                 <tr ng-repeat="producto in productos track by producto.id">
                     <td><a ui-sref="producto.detail({id:producto.id})">{{producto.id}}</a></td>
@@ -47,7 +38,7 @@
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"
                                     ui-sref="producto.detail({id:producto.id})"
-                                    class="btn btn-info btn-sm"> 
+                                    class="btn btn-info btn-sm">
                                 <span class="glyphicon glyphicon-eye-open"></span>
                                 <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
                             </button>
@@ -59,11 +50,11 @@
                             </button>
                             <button type="submit"
                                     ui-sref="producto.delete({id:producto.id})"
-                                    class="btn btn-danger btn-sm">                                    
+                                    class="btn btn-danger btn-sm">
                                 <span class="glyphicon glyphicon-remove-circle"></span>
                                 <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
                             </button>
-                        </div>
+                        </div>-->
                     </td>
                 </tr>
             </tbody>
