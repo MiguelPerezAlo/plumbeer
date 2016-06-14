@@ -11,7 +11,6 @@ angular.module('plumbeerApp')
         };
         $scope.loadAll();
 
-
         $scope.refresh = function () {
             $scope.loadAll();
             $scope.clear();
